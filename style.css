@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-padding-top: var(--header-height);
+    scroll-behavior: smooth;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: teal;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    color: rgb(173, 166, 166);
+}
+
+.header h1 {
+    /* display: inline-block; */
+    font-size: 48px;
+    /* float: left; */
+    color: blue;
+}
+
+nav {
+    /* overflow: auto; */
+    margin-right: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+nav a {
+    display: inline-block;
+    margin-right: 30px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.home {
+    height: 800px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url("./images/austin-dog.png");
+    background-size: cover;
+    background-position: center;
+    opacity: .8;
+}
+
+.home h2 {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    background-color: grey;
+}
+
+/* #home-photos {
+    display: flex;
+}
+
+#home-photos img {
+    height: 50%;
+    width: 50%;
+} */
+
+main {
+    margin-top: var(--header-height);
+}
+
+main section {
+    padding: 15px;
+}
+
+section {
+    margin: 30px 30px;
+}
+
+.works {
+    display: flex;
+    /* align-self: flex-start; */
+    flex-wrap: wrap;
+    align-items:center;
+    justify-items: auto;
+    width:fit-content;
+}
+
+.works section {
+    /* display: block; */
+    /* margin: 10p auto;
+    max-width: 200px; */
+    margin-bottom: 20px;
+    padding: 20px;
+    /* height: 300px;
+    width: 600px; */
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    background-color: teal;
+    color: #ffffff;
+}
+
+#main-project {
+    width: 80%;
+}
+
+#main-project img {
+    /* width: 500px; */
+    height: 300px;
+    width: 600px;
+    position: relative;
+}
+
+.projects {
+    height: 300px;
+    width: 300px;
+    position: relative;
+}
+
+
+:root {
+    --header-height: 70px;
+}
