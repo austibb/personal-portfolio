@@ -98,6 +98,33 @@ p {
     position: relative;
 }
 
+/* creates an overlay on project photo tiles, to be removed on hover. */
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .7;
+    background-color: grey;
+}
+
+.overlay h3 {
+    text-align: center;
+    padding-top: 42%;
+    padding-bottom: 42%;
+    opacity: 1;
+    color: var(--theme-text);
+}
+
+/* sends the overlay behind the photo, allowing access to the image hyperlink. */
+.works section:hover .overlay{
+    opacity: 0;
+    z-index: -1;
+}
+
 #main-project img {
     height: 600px;
     width: 700px;
@@ -122,6 +149,7 @@ p {
     margin: 20px 30px;
 }
 
+/* creates a flexbox for the footer items */
 footer {
     display: flex;
     margin-left: auto;
@@ -148,8 +176,12 @@ footer {
         height: var(--narrow-header-height);
         background: var(--narrow-theme)
     }
+    nav {
+        margin-right: 0;
+    }
     nav a {
         display: block;
+        margin-right: 0;
     }
     /* sets the color darker when page is below 992px wide */
     main {
