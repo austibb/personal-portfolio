@@ -1,127 +1,172 @@
+/* quick reset of browser settings, and includes padding/border/margin
+in the total width of each element */
 * {
     box-sizing: border-box;
     padding: 0;
+    border: 0;
     margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+
 }
 
+/* controls scroll behavior for nav bar links, and ensures that 
+the nav bar is always visible at the top of the screen
+without obscuring the page content */
 html {
     scroll-padding-top: var(--header-height);
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding-bottom: 20px;
 }
 
-header {
+/* creates a "sticky" navigation bar that is always present at 
+the top of the page. */
+#sticky-bar {
     position: fixed;
     top: 0;
     width: 100%;
     padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: teal;
+    background-color: var(--theme);
     height: var(--header-height);
     display: flex;
     justify-content: space-between;
     z-index: 1;
-    color: rgb(173, 166, 166);
-}
-
-.header h1 {
-    /* display: inline-block; */
-    font-size: 48px;
-    /* float: left; */
-    color: blue;
+    color: var(--theme-text);
 }
 
 nav {
-    /* overflow: auto; */
     margin-right: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
 }
 
 nav a {
+    font-size: 20px;
     display: inline-block;
     margin-right: 30px;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: var(--theme-text);
 }
 
-.home {
-    height: 800px;
+.hero {
+    height: 900px;
     width: 100%;
-    margin-bottom: 25px;
+    box-sizing: unset;
     background-image: url("./images/austin-dog.png");
     background-size: cover;
-    background-position: center;
-    opacity: .8;
+    background-position: top left;
+    opacity: .90;
 }
 
-.home h2 {
+#banner {
     text-align: center;
     width: fit-content;
     margin: auto;
-    background-color: grey;
+    opacity: 1;
+    color: var(--theme-text);
 }
 
-/* #home-photos {
-    display: flex;
-}
-
-#home-photos img {
-    height: 50%;
-    width: 50%;
-} */
-
+/* creates space for sticky nav bar */
 main {
     margin-top: var(--header-height);
 }
 
 main section {
     padding: 15px;
+    border: 10px;
+    margin: 30px 0;
 }
 
-section {
-    margin: 30px 30px;
+p {
+    padding-top: 20px;
 }
 
 .works {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    /* align-self: flex-start; */
     flex-wrap: wrap;
     align-items:center;
-    justify-items: auto;
+    justify-items:auto;
+    justify-content: space-around;
     width:fit-content;
 }
 
 .works section {
-    /* display: block; */
-    /* margin: 10p auto;
-    max-width: 200px; */
-    margin-bottom: 20px;
+    margin: 20px;
     padding: 20px;
-    /* height: 300px;
-    width: 600px; */
-    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-    background-color: teal;
-    color: #ffffff;
-}
-
-#main-project {
-    width: 80%;
+    background-color: var(--theme);
+    color: var(--theme-text);
+    position: relative;
 }
 
 #main-project img {
-    /* width: 500px; */
-    height: 300px;
-    width: 600px;
+    height: 600px;
+    width: 700px;
+    display: block;
+}
+
+.works section {
     position: relative;
 }
 
-.projects {
+.projects img {
     height: 300px;
     width: 300px;
-    position: relative;
 }
 
+.contact {
+    display: flex;
+}
+
+.contact p {
+    width: 20vw;
+    margin: 20px 30px;
+}
+
+footer {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--theme);
+    color: var(--theme-text);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 992px) {
+    /* Changes the nav bar to column arrangement and alters some element colors*/
+    html {
+        scroll-padding-top: var(--narrow-header-height);
+        overflow: auto;
+    }
+    #sticky-bar {
+        text-align: center;
+        flex-direction: column;
+        height: var(--narrow-header-height);
+        background: var(--narrow-theme)
+    }
+    nav a {
+        display: block;
+    }
+    /* sets the color darker when page is below 992px wide */
+    main {
+        margin-top: var(--narrow-header-height);
+    }
+    .works section{
+        background-color: var(--narrow-theme);
+    }
+    footer {
+        background-color: var(--narrow-theme);
+    }
+}
 
 :root {
     --header-height: 70px;
+    --theme: rgb(105, 204, 204);
+    --theme-text: whitesmoke;
+    --narrow-header-height: 200px;
+    --narrow-theme: rgb(54, 97, 97);
 }
